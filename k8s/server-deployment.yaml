@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: gzkatana/multi-server:v2
+        image: stephengrider/multi-server
         ports:
         - containerPort: 5000
         env:
@@ -22,16 +22,16 @@ spec:
             value: redis-cluster-ip-service
           - name: REDIS_PORT
             value: '6379'
-          - name: PGUSER
+          - name: POSTGRES_USER
             value: postgres
-          - name: PGHOST
+          - name: POSTGRES_HOST
             value: postgres-cluster-ip-service
-          - name: PGPORT
+          - name: POSTGRES_PORT
             value: '5432'
-          - name: PGDATABASE
+          - name: POSTGRES_DATABASE
             value: postgres
-          - name: PGPASSWORD
+          - name: POSTGRES_PASSWORD
             valueFrom:
               secretKeyRef:
-                key: PGPASSWORD
-                name: pgpassword
+                key: POSTGRES_PASSWORD
+                name: pgpassword1

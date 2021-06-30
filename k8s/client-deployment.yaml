@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
       - name: client
-        image: gzkatana/multi-client:v2
+        image: stephengrider/multi-client
         ports:
         - containerPort: 3000
- 
